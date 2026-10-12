@@ -1,0 +1,203 @@
+.nusc-matches {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 85% 10%, rgb(var(--nusc-red-rgb) / 8%), transparent 38%),
+    var(--nusc-deep-navy);
+}
+
+.nusc-matches__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(36px, 7vw, 100px);
+}
+
+.nusc-matches .nusc-section-kicker {
+  color: var(--nusc-light-text);
+}
+
+.nusc-matches__title {
+  max-width: 10ch;
+  margin: 0;
+  color: var(--nusc-white);
+  font-family: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+  font-size: clamp(3.5rem, 6vw, 6.8rem);
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: -0.07em;
+  line-height: 0.85;
+  text-transform: uppercase;
+}
+
+.nusc-matches__title span {
+  display: block;
+  color: var(--nusc-highlight-red);
+}
+
+.nusc-matches__description {
+  max-width: 42ch;
+  margin: 24px 0 0;
+  color: var(--nusc-light-text);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.75;
+}
+
+.nusc-matches__board {
+  position: relative;
+  padding: clamp(22px, 3.5vw, 40px);
+  border: 1px solid rgb(var(--nusc-white-rgb) / 18%);
+  background: rgb(var(--nusc-deep-navy-rgb) / 88%);
+  box-shadow: 0 28px 60px rgb(var(--nusc-black-rgb) / 20%);
+}
+
+.nusc-matches__board::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--nusc-navy);
+}
+
+.nusc-matches__board-header,
+.nusc-matches__status {
+  display: flex;
+  align-items: center;
+}
+
+.nusc-matches__board-header {
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(var(--nusc-white-rgb) / 16%);
+  color: var(--nusc-white);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.nusc-matches__status {
+  gap: 8px;
+  color: var(--nusc-pale-blue);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+}
+
+.nusc-matches__status > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--nusc-highlight-red);
+  box-shadow: 0 0 12px rgb(var(--nusc-highlight-red-rgb) / 75%);
+}
+
+.nusc-matches__fixture {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+  padding-block: clamp(26px, 4vw, 44px);
+}
+
+.nusc-matches__club,
+.nusc-matches__opponent {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  color: var(--nusc-white);
+  font-family: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+  font-size: clamp(1.2rem, 2.4vw, 1.8rem);
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nusc-matches__club img,
+.nusc-matches__opponent-mark {
+  width: clamp(72px, 10vw, 112px);
+  height: clamp(72px, 10vw, 112px);
+  object-fit: contain;
+}
+
+.nusc-matches__opponent-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid rgb(var(--nusc-white-rgb) / 28%);
+  color: rgb(var(--nusc-white-rgb) / 70%);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.nusc-matches__versus {
+  color: var(--nusc-white);
+  font-family: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-style: italic;
+  font-weight: 800;
+}
+
+.nusc-matches__notice {
+  margin: 0;
+  padding: 16px 18px;
+  border-left: 2px solid var(--nusc-navy);
+  background: rgb(var(--nusc-white-rgb) / 6%);
+  color: var(--nusc-light-text);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.nusc-matches__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin-top: 24px;
+  color: var(--nusc-pale-blue);
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.nusc-matches__footer span + span::before {
+  content: "/";
+  margin-right: 24px;
+  color: var(--nusc-pale-blue);
+}
+
+@media (max-width: 767px) {
+  .nusc-matches__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .nusc-matches__title {
+    max-width: none;
+    font-size: clamp(3rem, 15vw, 5rem);
+  }
+
+  .nusc-matches__board {
+    padding: 22px 18px;
+  }
+
+  .nusc-matches__board-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nusc-matches__fixture {
+    gap: 12px;
+  }
+
+  .nusc-matches__footer {
+    gap: 8px 16px;
+  }
+
+  .nusc-matches__footer span + span::before {
+    margin-right: 16px;
+  }
+}

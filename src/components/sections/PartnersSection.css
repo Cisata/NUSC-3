@@ -1,0 +1,113 @@
+.nusc-partners {
+  background: linear-gradient(180deg, var(--nusc-dark-surface) 0%, #101d31 100%);
+}
+
+.nusc-partners__inner {
+  display: grid;
+  gap: clamp(26px, 3.2vw, 42px);
+}
+
+.nusc-partners__header {
+  display: grid;
+  gap: 12px;
+}
+
+.nusc-partners__title {
+  margin: 0;
+  max-width: 15ch;
+  color: var(--nusc-white);
+  font-family: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+  font-size: clamp(3rem, 5vw, 6rem);
+  font-style: italic;
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+  text-transform: uppercase;
+}
+
+.nusc-partners__title span {
+  color: var(--nusc-red);
+}
+
+.nusc-partners__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 22px);
+}
+
+.nusc-partners__logo {
+  display: grid;
+  place-items: center;
+  min-height: 128px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  box-shadow: 0 16px 28px rgb(11 22 40 / 16%);
+}
+
+.nusc-partners__logo img {
+  display: block;
+  width: min(72%, 150px);
+  height: auto;
+  max-height: 58px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgb(15 23 42 / 10%));
+}
+
+.nusc-partners__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 8px;
+}
+
+.nusc-partners__copy {
+  margin: 0;
+  max-width: 42ch;
+  color: rgb(var(--nusc-white-rgb) / 82%);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.nusc-partners__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.9rem 1.4rem;
+  border: 1px solid rgb(var(--nusc-white-rgb) / 22%);
+  background: var(--nusc-white);
+  color: var(--nusc-text-primary);
+  font-family: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.nusc-partners__cta::after {
+  content: "→";
+  margin-left: 10px;
+}
+
+.nusc-partners__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 22px rgb(255 255 255 / 10%);
+}
+
+@media (max-width: 767px) {
+  .nusc-partners__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nusc-partners__footer {
+    display: grid;
+    justify-content: stretch;
+  }
+
+  .nusc-partners__title {
+    max-width: none;
+    font-size: clamp(2.8rem, 16vw, 4.5rem);
+  }
+}
